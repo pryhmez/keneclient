@@ -1,0 +1,93 @@
+.footer {
+    // bottom: 0;
+    // position: absolute;
+    width: 100vw;
+    height: 350px;
+    // background-color: #00b749;
+    background-color: #357533;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: 'sengoe UI';
+    // background-color: #c1c1c1;
+}
+
+.footer .footer-main {
+    height: 100%;
+    width: 65%;
+    // background-color: black;
+    display: flex;
+}
+
+.footer .footer-main .foot {
+    flex: 1;
+    max-height: 100%;
+    // background-color: bisque;
+    padding: 3rem;
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 900;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    form {
+        display: flex;
+        align-items: center;
+        // background-color: brown;
+    }
+
+    input {
+        width: 70%;
+        flex: 1;
+        margin-right: 20px;
+    }
+}
+
+.footer .footer-main .foot-right {
+    flex: 1;
+    max-height: 100%;
+    // background-color: brown;
+}
+
+.footer .snack-bar {
+    height: 40px;
+    width: 100%;
+    // background-color: #f5af18c2;
+    // background-color: #00b749;
+    background-color: rgb(116, 113, 104);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    p {
+        font-size: 1.6rem;
+        font-family: 'Encode', sans-serif;
+        font-weight: bold;
+        color: white;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .footer {
+
+        height: max-content;
+
+        .footer-main {
+            flex-direction: column;
+            margin-bottom: 6rem;
+        }
+
+        .snack-bar {
+            width: 100vw;
+            padding: 2rem;
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.center-container {
+    // background-color: red;
+    width: 100%;
+    // height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.center-container .centralize {
+    // background-color: brown;
+    width: 70%;
+    height: 100%;
+    margin-top: 15vh;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .center-container .centralize {
+        width: 90%;
+    }
+ }

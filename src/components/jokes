@@ -1,0 +1,83 @@
+import React, { useState, useEffect, useRef } from "react";
+
+import Navigation from '../components/Navigation';
+
+import '../styles/pages/Landing.scss';
+import imga from "../assets/img1.jpg";
+import imgb from "../assets/img2.webp";
+import imgc from "../assets/img3.webp";
+
+function useInterval(callback, delay) {
+  const savedCallback = useRef();
+
+  // Remember the latest callback.
+  useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  // Set up the interval.
+  useEffect(() => {
+    let id = setInterval(() => {
+      savedCallback.current();
+    }, delay);
+    return () => clearInterval(id);
+  }, [delay]);
+}
+
+const Landing = () => {
+
+  const [count, setCount] = useState(0);
+
+  const [img, setImg] = useState([
+    { name: imga },
+    { name: imgb },
+    { name: imgc }
+  ]);
+
+
+  useInterval(() => {
+    if (count === 2) {
+      setCount(0);
+    } else {
+
+      setCount(count + 1);
+    }
+  }, 4000);
+
+  return (
+    <div className="Landing">
+      <Navigation />
+
+      <div className="slideshow-container" >
+
+        <div className="slide-holder" >
+
+{}
+          <img className="fade" src={img[count].name} style={{opacity: "0.3" }} />
+
+
+        </div>
+
+
+        {/* s<div className="center-box "></div> */}
+
+
+      </div>
+
+      {/* <div style={{ textAlign: "center" }}>
+        <span className="dot" onclick="currentSlide(1)"></span>
+        <span className="dot" onclick="currentSlide(2)"></span>
+        <span className="dot" onclick="currentSlide(3)"></span>
+      */}
+      {/* </div>  */}
+
+    </div >
+  );
+}
+
+export default Landing;
+
+// {/* <div className="mySlides fade">
+//           </div> */}
+
+// {/* 
